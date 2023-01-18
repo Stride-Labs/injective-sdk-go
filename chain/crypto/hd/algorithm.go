@@ -72,7 +72,7 @@ func (s ethSecp256k1Algo) Derive() hd.DeriveFn {
 
 		key := masterKey
 		for _, n := range hdpath {
-			key, err = key.Child(n)
+			key, err = key.Derive(n)
 			if err != nil {
 				return nil, err
 			}
